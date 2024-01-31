@@ -78,4 +78,13 @@ function Timer(){
 
 setInterval(function(){Timer()},33);
 
+// 端末の傾きを検知する
+window.addEventListener("orientationchange", () => {
+ // 端末の傾きを絶対値で取得する
+ var direction = Math.abs(window.orientation);
+ if(direction == 90) {
+ document.documentElement.requestFullscreen();
+ }
+
+
 </script>
