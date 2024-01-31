@@ -1,8 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-
 <canvas id="can"></canvas>
 
 <style>
@@ -77,15 +74,6 @@ function Timer(){
 }
 
 setInterval(function(){Timer()},33);
-
-// 端末の傾きを検知する
-window.addEventListener("orientationchange", () => {
- // 端末の傾きを絶対値で取得する
- var direction = Math.abs(window.orientation);
- if(direction == 90) {
- document.documentElement.requestFullscreen();
- }
-});
 
 
 </script>
