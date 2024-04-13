@@ -1,79 +1,23 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<div id="back"></div>
 
-<canvas id="can"></canvas>
+<div id="Title">
+    <h1 id="titleText">代表検定</h1>
+        <button  id="startBtn">タップしてスタート</button>
+    </div>
 
-<style>
-    body{
-        margin:0px;
-    }
-</style>
+    <div id="Question"class="center">
+        <h1 id="questionNum"></h1>
+        <h2 id="questionText"></h2>
 
-<script>
-let can = document.getElementById("can");
-let ctx = can.getContext("2d");
+            <button id="questionBtn1">タップしてスタート</button>
+            <button id="questionBtn2">タップしてスタート</button>
+            <button id="questionBtn3">タップしてスタート</button>
+            <button id="questionBtn4">タップしてスタート</button>
+    </div>
 
-let screen;
-
-ImgMap = new Image(); ImgMap.src = "map.png";
-
-let size = 32;
-
-let mapW = 10;
-let mapH = 10;
-
-let tileW = 2;
-let tileH = 2;
-
-can.width = innerHeight;
-can.height = innerHeight;
-
-const Map = [
-    0,0,0,0,0,0,0,0,0,0,
-    0,1,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0,
-    0,0,0,0,0,0,0,0,0,0
-]
-
-
-
-function Draw(){
-    const sctx = screen.getContext("2d");
-
-    for(let y = 0; y < mapH; y++){
-        for(let x = 0; x < mapW; x++){
-            DrawTile(sctx,Map[x * mapW + y],x*size,y*size);
-        }
-    }
-
-    sctx.fillRect(0,0,32,32)
-
-    const can = document.getElementById("can");
-    const ctx = can.getContext("2d");
-
-    ctx.drawImage(screen,0,0,screen.width,screen.height,0,0,can.width,can.height);
-}
-
-function DrawTile(sctx,idx,x,y){
-    let ix = ( idx % tileW ) * size;
-    let iy = Math.floor( idx / tileW) * size;
-    sctx.drawImage( ImgMap, ix,iy,size,size,x, y,size,size);
-}
-
-function Timer(){
-    screen = document.createElement("canvas");
-    screen.width  = mapW * size;
-    screen.height = mapH * size;
-
-    Draw();
-}
-
-setInterval(function(){Timer()},33);
-
-
-</script>
+<div id="header"></div>
+<div id="footer"></div> 
+        
+<link rel="stylesheet" href="代表検定.css">
+<script src="代表検定.js"></script>
+        
